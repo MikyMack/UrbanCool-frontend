@@ -259,7 +259,7 @@ header.header-bg {
 }
 
 header.transparent {
-  background: none;
+  background: white;
 }
 
 body:not(.side-layout) header:not(.smaller):not(.header-mobile).header-light.transparent {
@@ -420,7 +420,13 @@ header.smaller.scroll-light {
 header.scroll-light .logo-scroll{
   display: none;
 }
-
+.logo-main{
+  height: 80px!important;
+  padding: 5px 0 5px;
+}
+.footer-logo{
+  height: 70px!important;
+}
 header.smaller.scroll-light .logo-main{
   display: none;
 }
@@ -460,7 +466,7 @@ header.smaller.scroll-light .social-icons i {
 
 header.smaller.scroll-light #mainmenu li a,
 header.smaller.scroll-light #mainmenu li.has-child:after {
-  color: var(--title-font-color);
+  color: #4a679b;
 }
 
 header #mainmenu li li a:hover {
@@ -879,7 +885,7 @@ header.smaller #mainmenu>li::before{
   padding-top: 25px;
   padding-bottom: 25px;
   text-decoration: none;
-  color: #ffffff;
+  color: #4a6aa0;
   text-align: center;
   outline: none;
 }
@@ -1210,7 +1216,9 @@ header:not(.header-mobile) #mainmenu>li:hover ul.mega {
   padding: 4px;
   text-align: center;
   cursor: poInter;
-  color: #fff;
+  background: linear-gradient(90deg, #668FD4, #FF0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-top: 0px;
   margin-left: 20px;
 }
@@ -1222,7 +1230,7 @@ header:not(.header-mobile) #mainmenu>li:hover ul.mega {
 }
 
 #menu-btn.menu-open:before{
-  content: "\f068";
+ content: "\f00d";
 }
 
 .rtl #menu-btn {
@@ -1663,7 +1671,7 @@ section.no-bg,
 footer {
   color: var(--dark-body-font-color);;
   background: var(--title-font-color);
-  padding: 100px 0 0 0;
+  padding: 50px 0 0 0;
 }
 
 footer.footer-light {
@@ -1808,15 +1816,16 @@ header.s2 #mainmenu>li>a {
 
 header.header-mobile {
   position: fixed !important;
-  background: var(--title-font-color);
+  background: linear-gradient(90deg, #436194, #274c8c);
   top: 0;
-  padding-bottom: 10px;
+
 }
 
 header.header-mobile .container {
   max-width: 100% !important;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: white;
 }
 
 .dark-scheme header.header-mobile {
@@ -7468,7 +7477,24 @@ ol.ol-style-1 li::before {
 .social-icons.big i:hover {
   background: none;
 }
+.icofont-quote-left:before{
+ background: linear-gradient(90deg, #FF4B2B, #330508);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.titles{
+   background: linear-gradient(90deg, #FF4B2B, #330508);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.blog-disc{
+        display: -webkit-box;
+  -webkit-line-clamp: 4; /* Show only 1 line */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
+}
 #topbar .social-icons i{
   font-size: 16px;
   background: none;
@@ -7479,6 +7505,7 @@ ol.ol-style-1 li::before {
   width: 30px;
   margin-top: 5px;
   color:var(--tertiary-color);
+ 
 }
 
 .de-color-icons i {
@@ -20376,7 +20403,11 @@ img {
 /* -------------------------------------------------- 
     custom for 320px & 480px 
     /* -------------------------------------------------- */
-
+@media only screen and (max-width: 993px) {
+#topbar{
+  display: none;
+}
+}
 @media only screen and (max-width: 767px) {
 
    header .logo-main {
@@ -20389,6 +20420,7 @@ img {
 
   header .logo-mobile {
     display: block;
+    padding: 2px 0 5px;
   }
 
   header .btn-main{
@@ -20798,5 +20830,20 @@ img {
     left: 50%;
     margin-left: auto;
     width: auto;
+  }
+}
+.title-bg{
+  background: linear-gradient(90deg, #270909, #8D0909)!important;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-weight: bold; /* Improves visibility */
+
+}
+
+@media(min-width:780px){
+  #content{
+    margin-top: 4rem;
   }
 }
