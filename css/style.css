@@ -128,7 +128,7 @@ html {
 
 body {
   font-family: var(--body-font);
-  font-size: var(--body-font-size)
+  font-size: var(--body-font-size);
   font-weight: 400;
   color: var(--body-font-color);
   padding: 0;

@@ -8,7 +8,7 @@
     <link rel="icon" href="images/urbancool/logo.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" >
-    <meta content="CoolAir — Air Conditioner & HVAC Repair Website Template" name="description" >
+    <meta content="UrbanCool — Air Conditioner & HVAC Repair" name="description" >
     <meta content="" name="keywords" >
     <meta content="" name="author" >
     <!-- CSS Files
@@ -43,7 +43,7 @@
                             <div class="d-flex justify-content-between xs-hide">
                                 <div class="header-widget d-flex">
                                     <div class="topbar-widget"><a href="tel:+917907957490"><i class="icofont-phone"></i>+91 7907 957 490</a></div>
-                                    <div class="topbar-widget"><a href="#"><i class="icofont-envelope"></i>contact@urbancool.com</a></div>
+                                    <div class="topbar-widget"><a href="mailto:urbancool07@gmail.com"><i class="icofont-envelope"></i>urbancool07@gmail.com</a></div>
 
                                 </div>
 
@@ -137,7 +137,7 @@
                             <p>Whether you have a question, a suggestion, or just want to say hello, this is the place to do it. Please fill out the form below with your details and message, and we'll get back to you as soon as possible.</p>
 
                             
-                            <form name="contactForm" id="contact_form" class="position-relative z1000" method="post" action="https://madebydesignesia.com/themes/coolair/contact.php">
+                            <form name="contactForm" id="contact_form" class="position-relative z1000" onsubmit="return sendWhatsAppMessage(event);">
                                 <div class="row gx-4">
                                     <div class="col-lg-6 col-md-6 mb10">
                                         <div class="field-set">
@@ -164,19 +164,49 @@
                                     </div>
                                 </div>
                                     
-                                
-                                
                                 <div id='submit' class="mt20">
-                                    <input type='submit' id='send_message' value='Send Message' class="btn-main">
+                                    <input type='submit' id='send_message' value='Send Message via WhatsApp' class="btn-main">
                                 </div>
 
-                                <div id="success_message" class='success'>
-                                    Your message has been sent successfully. Refresh this page if you want to send more messages.
+                                <div id="success_message" class='success' style="display:none;">
+                                    Your message has been sent successfully via WhatsApp.
                                 </div>
-                                <div id="error_message" class='error'>
-                                    Sorry there was an error sending your form.
+                                <div id="error_message" class='error' style="display:none;">
+                                    Sorry, there was an error sending your message.
                                 </div>
                             </form>
+                            <script>
+                            function sendWhatsAppMessage(event) {
+                                event.preventDefault();
+                                var name = document.getElementById('name').value.trim();
+                                var email = document.getElementById('email').value.trim();
+                                var phone = document.getElementById('phone').value.trim();
+                                var message = document.getElementById('message').value.trim();
+
+                                if (!name || !email || !phone || !message) {
+                                    document.getElementById('error_message').style.display = 'block';
+                                    document.getElementById('success_message').style.display = 'none';
+                                    return false;
+                                }
+
+                                var text = 
+                                    "New Contact Form Submission:%0A" +
+                                    "Name: " + encodeURIComponent(name) + "%0A" +
+                                    "Email: " + encodeURIComponent(email) + "%0A" +
+                                    "Phone: " + encodeURIComponent(phone) + "%0A" +
+                                    "Message: " + encodeURIComponent(message);
+
+                                var whatsappUrl = "https://wa.me/917907957490?text=" + text;
+
+                                window.open(whatsappUrl, '_blank');
+
+                                document.getElementById('success_message').style.display = 'block';
+                                document.getElementById('error_message').style.display = 'none';
+                                // Optionally reset the form
+                                // document.getElementById('contact_form').reset();
+                                return false;
+                            }
+                            </script>
 
                             </div>
 
@@ -196,7 +226,7 @@
                             <div class="spacer-single"></div>
 
                             <div class="fw-bold text-dark titles"><i class="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
-                          <a style="text-decoration: none;" href="mailto:contact@urbancool.com"> contact@urbancool.com</a>
+                          <a style="text-decoration: none;" href="mailto:urbancool07@gmail.com"> urbancool07@gmail.com</a>
 
                             <div class="spacer-single"></div>
 
@@ -246,9 +276,9 @@
                                 <div class="widget">
                                     <h5>Our Services</h5>
                                     <ul>
-                                        <li><a href="#">Maintenace</a></li>
-                                        <li><a href="#">Repairs</a></li>
-                                        <li><a href="#">Installation</a></li>
+                                        <li><a href="maintenance.html">Maintenace</a></li>
+                                        <li><a href="repair.html">Repairs</a></li>
+                                        <li><a href="servies.html">Installation</a></li>
                                      
                                     </ul>
                                 </div>
@@ -266,7 +296,7 @@
                             <div class="spacer-20"></div>
 
                             <div class="fw-bold text-white"><i class="icofont-envelope me-2 id-color-2"></i>Send a Message</div>
-                            contact@urbancool.com                            
+                            urbancool07@gmail.com                           
                         </div>
                     </div>
                 </div>

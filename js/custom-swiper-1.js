@@ -9,7 +9,7 @@ const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
   slidesPerView: 1,
   loop: true,
-  speed: 1200,
+  speed: 3000,
   mousewheel: false,
   watchSlidesProgress: true,
   parallax: true,
